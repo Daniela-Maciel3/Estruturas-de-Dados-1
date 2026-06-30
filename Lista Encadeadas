@@ -5,15 +5,18 @@
           int info;
           struct lista* prox;
       } Lista
+//inicialização
   Lista* inicializa(void) {
       return NULL;
   }
+//inserir
   Lista* insere(Lista* l, int i) {
     Lista* novo = (Lista*) malloc(sizeof(Lista));
     novo->info = i;
     novo->prox = l;
     return novo;
   }
+//imprimir
   void imprime(Lista* l) {
       Lista* p;
       for (p = l; p != NULL; p = p->prox) {
