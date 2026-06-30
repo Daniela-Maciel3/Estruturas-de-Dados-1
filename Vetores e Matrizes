@@ -1,0 +1,51 @@
+//Exemplo para percorrer um vetor linear
+    #include <stdio.h>
+        int main() {
+        int numeros[5] = {1, 2, 3, 4, 5};
+        for(int i = 0; i < 5; i++) {
+        printf("%d\n", numeros[i]);
+        }
+        return 0;
+        }
+
+//Exemplo para percorrer uma matriz
+  #include <stdio.h>
+      int main() {
+      int matriz[2][2] = {
+      {1, 2},
+      {3, 4}
+      };
+      for(int i = 0; i < 2; i++) {
+      for(int j = 0; j < 2; j++) {
+      printf("%d ", matriz[i][j]);
+      }
+      printf("\n");
+      }
+      return 0;
+      }
+
+//Entrada de dados vetor:
+    for(int i = 0; i < 5; i++) {
+       scanf("%d", &numeros[i]);
+    }
+// Entrada de dados (scanf) matriz
+    for(int i = 0; i < 2; i++) {
+       for(int j = 0; j < 2; j++) {
+         scanf("%d", &matriz[i][j]);
+       }
+    }
+
+//Somar elementos de um vetor
+  int soma = 0;
+  for(int i = 0; i < 5; i++) {
+     soma += numeros[i];
+  }
+
+//Soma de uma matriz
+  int soma = 0;
+    for(int i = 0; i < 2; i++) {
+       for(int j = 0; j < 2; j++) {
+           soma += matriz[i][j];
+       }
+    }
+  
