@@ -1,0 +1,30 @@
+//Lista
+//remoção do inicio
+No* removerInicio(No *lista) {
+    if (lista == NULL) {
+        printf("Lista vazia\n");
+        return NULL;
+    }
+    No *temp = lista;      
+    lista = lista->prox;   
+    free(temp);            
+    return lista;          
+}
+
+//remoção por valor
+No* removerPorValor(No *lista, int valor) {
+    if (lista == NULL) {
+        printf("Lista vazia\n");
+        return NULL;
+    }
+    No *atual = lista;
+    No *anterior = NULL;
+
+//remoção por posição
+No* removerPorPosicao(No *lista, int pos) {
+    if (lista == NULL) {
+        printf("Lista vazia\n");
+        return NULL;
+    }
+    No *atual = lista;
+    No *anterior = NULL;
