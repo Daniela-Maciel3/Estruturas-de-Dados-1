@@ -1,0 +1,20 @@
+//Estruturas básica de um programa em C:
+
+#include
+  int main() {
+  printf("Olá, mundo!\n");
+  return 0; }
+
+//Exemplo completo do uso de Variáveis, Operadores e Entrada/Saída Básicas
+#include <stdio.h>
+  int main() {
+  int idade;
+  float altura;
+  printf("Digite sua idade: ");
+  scanf("%d", &idade);    //ENTRADA DE DADOS COM scanf() e o uso de especificadores(%d)
+  printf("Digite sua altura: ");  //Saida de dados com printf
+  scanf("%f", &altura);
+  printf("Idade: %d\n", idade);
+  printf("Altura: %.2f\n", altura);
+  return 0;
+}
