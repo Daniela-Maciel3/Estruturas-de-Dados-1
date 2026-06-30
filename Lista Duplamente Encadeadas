@@ -1,0 +1,53 @@
+//Exemplo de criar um nó
+  Lista* criarNo(int valor) {
+  Lista* novo = (Lista*) malloc(sizeof(Lista));
+      novo->info = valor;
+      novo->ant = NULL;
+      novo->prox = NULL;
+    return novo;
+  }
+//inserção no inicio
+  Lista* inserirInicio(Lista* l, int valor) {
+  Lista* novo = criarNo(valor);
+      novo->prox = l;
+    if (l != NULL) {
+      l->ant = novo;
+    }
+  return novo;
+  }
+//inserção final
+  Lista* inserirFinal(Lista* l, int valor) {
+  Lista* novo = criarNo(valor);
+      if (l == NULL) {
+          return novo;
+      }
+    Lista* p = l;
+    while (p->prox != NULL) {
+        p = p->prox;
+    }
+      p->prox = novo;
+      novo->ant = p;
+      return l;
+  }
+//imprimir
+void imprimir(Lista* l) {
+  Lista* p = l;
+  while (p != NULL) {
+      printf("%d ", p->info);
+      p = p->prox;
+    }
+  }
+//impressao reverso
+   void imprimirReverso(Lista* l) {
+        if (l == NULL) {
+            return;
+        }
+    Lista* p = l;
+    while (p->prox != NULL) {
+          p = p->prox;
+      }
+    while (p != NULL) {
+          printf("%d ", p->info);
+          p = p->ant;
+      }
+  }
