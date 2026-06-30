@@ -1,0 +1,82 @@
+//Armazena num vetor e mostra numeros pares
+#include <stdio.h>
+		int main(){
+		int vet[5],i;
+	
+			for (i = 0; 5>i; i++){
+				printf("Digite 5 numeros inteiros: ");
+				scanf(" %d" , &vet[i]);
+			}
+			for (i = 0; 5>i; i++){
+				if(vet[i]%2==0){
+					printf(" %d ", vet[i]);
+				}
+			}
+		return 0;
+	}
+
+//Armazena em um vetor e mostra o maior valor encontrado
+#include <stdio.h>
+	int main(){
+		int vet[5],i,maior;
+		for (i = 0; 5>i; i++){
+			printf("Digite 5 numeros inteiros: ");
+			scanf(" %d" , &vet[i]);
+		
+		}
+		maior = vet[0];
+		for (i = 0; 5>i; i++){
+			if(vet[i]>maior){
+				maior = vet[i];
+			}
+		}
+		printf("Maior numero: %d ", maior);
+	return 0;
+	}
+
+//Soma os numeros positivos
+#include <stdio.h>
+	int main(){
+		int vet[5],i,soma = 0 ;
+		for (i = 0; 5>i; i++){
+			printf("Digite 5 numeros inteiros: ");
+			scanf(" %d" , &vet[i]);
+		}
+		for (i = 0; 5>i; i++){
+			if(vet[i]>=0){
+				soma += vet[i];
+			}
+		}
+		printf("Soma: %d ", soma);
+	return 0;
+	}
+
+//Tabuada
+#include <stdio.h>
+	int main(){
+		int num, i,mult;
+		printf("Digite um numero inteiro: ");
+		scanf(" %d", &num);
+		printf("Tabuada: \n");
+		for (i = 1; 10>=i; i++){
+			mult = num*i;
+			printf("%dx%d=%d \n", i, num, mult);
+		}
+	return 0;
+	}
+
+//Contagem Regressiva
+#include <stdio.h>
+	int main(){
+		int num, i,mult;
+		printf("Digite um numero inteiro positivo: ");
+		scanf(" %d", &num);
+		if(num<0){
+			printf("Número inválido");
+			return 0;
+		}
+		for (i = num; i>=0; i--){
+			printf("%d ",i);
+		}
+	return 0;
+	}
