@@ -1,0 +1,37 @@
+//inicialização
+  void inicializar(Fila *f){
+      f->frente = 0;
+      f->fim = -1;
+  }
+
+//verificar se esta vazia
+  int filaVazia(Fila *f){
+      return f->fim < f->frente;
+  }
+
+//inserção
+  void enqueue(Fila *f, int valor){
+      if(f->fim == MAX-1){
+          printf("Fila cheia!\n");
+          return;
+      }
+      f->fim++;
+      f->dados[f->fim] = valor;
+  }
+
+//remoção
+  int dequeue(Fila *f){
+      if(filaVazia(f)){
+          printf("Fila vazia!\n");
+          return -1;
+      }
+    return f->dados[f->frente++];
+  }
+
+//mostrar fila
+  void mostrar(Fila *f){
+      for(int i=f->frente;i<=f->fim;i++){
+         printf("%d ",f->dados[i]);
+      }
+     printf("\n");
+    }
