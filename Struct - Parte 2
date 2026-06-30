@@ -1,0 +1,117 @@
+//Exemplo sem typedef:
+
+//Exemplo com typedef:
+  typedef struct {
+     char nome[50];
+     int idade;
+     float nota;
+  } Aluno;
+
+//Exemplo Struct
+  #include <stdio.h>
+      typedef struct {
+         char nome[50];
+         float nota;
+      } Aluno;
+      int main() {
+      Aluno a1;
+      printf("Digite o nome: ");
+      scanf(" %[^\n]", a1.nome);
+      printf("Digite a nota: ");
+      scanf("%f", &a1.nota);
+      printf("\n--- DADOS DO ALUNO ---\n");
+      printf("Nome: %s\n", a1.nome);
+      printf("Nota: %.2f\n", a1.nota);
+      return 0;
+      }
+
+//Exemplo de vetor dentro de Struct:
+  #include <stdio.h>
+  typedef struct {
+      char nome[50];
+      float nota;
+  } Aluno;
+      int main() {
+      Aluno turma[3];
+      int i;
+      for(i = 0; i < 3; i++) {
+      printf("\nAluno %d\n", i + 1);
+      printf("Digite o nome: ");
+      scanf(" %[^\n]", turma[i].nome);
+      printf("Digite a nota: ");
+      scanf("%f", &turma[i].nota);
+      }
+      printf("\n--- LISTA DE ALUNOS ---\n");
+      for(i = 0; i < 3; i++) {
+      printf("Aluno %d: %s - Nota: %.2f\n", i + 1, turma[i].nome, turma[i].nota);}
+      return 0;}
+
+//Exemplo de struct aninhada
+  #include <stdio.h>
+    typedef struct {
+        char rua[50];
+        int numero;
+    } Endereco;
+    typedef struct {
+    char nome[50];
+    int idade;
+    Endereco end;
+    } Pessoa;
+    int main() {
+    Pessoa p;
+    printf("Digite o nome: ");
+    scanf(" %[^\n]", p.nome);
+    printf("Digite a idade: ");
+    scanf("%d", &p.idade);
+    printf("Digite a rua: ");
+    scanf(" %[^\n]", p.end.rua);
+    printf("Digite o numero: ");
+    scanf("%d", &p.end.numero);
+    printf("\n--- DADOS COMPLETOS ---\n");
+    printf("Nome: %s\n", p.nome);
+    printf("Idade: %d\n", p.idade);
+    printf("Rua: %s\n", p.end.rua);
+    printf("Numero: %d\n", p.end.numero);
+    return 0;}
+
+//Exemplo de struct para função
+  #include <stdio.h>
+      typedef struct {
+          char nome[50];
+          float preco;
+      } Produto;
+      void exibirProduto(Produto p) {
+      printf("\n--- PRODUTO ---\n");
+      printf("Nome: %s\n", p.nome);
+      printf("Preco: R$ %.2f\n", p.preco);
+      }
+      int main() {
+      Produto prod;
+      printf("Digite o nome do produto: ");
+      scanf(" %[^\n]", prod.nome);
+      printf("Digite o preco: ");
+      scanf("%f", &prod.preco);
+      exibirProduto(prod);
+      return 0;}
+
+//Exemplo de struct por ponteiro
+  #include <stdio.h>
+      typedef struct {
+          char nome[50];
+          int idade;
+      } Pessoa;
+      void alterarIdade(Pessoa *p) {
+      p->idade = 30;
+      }
+      int main() {
+      Pessoa pessoa1;
+      printf("Digite o nome: ");
+      scanf(" %[^\n]", pessoa1.nome);
+      printf("Digite a idade: ");
+      scanf("%d", &pessoa1.idade);
+      alterarIdade(&pessoa1);
+      printf("\n--- DADOS ALTERADOS ---\n");
+      printf("Nome: %s\n", pessoa1.nome);
+      printf("Idade: %d\n", pessoa1.idade);
+      return 0;
+      }
