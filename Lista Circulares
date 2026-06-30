@@ -1,0 +1,31 @@
+//Lista Circular
+//inserção
+Lista* inserirFinal(Lista* l, int valor) {
+    Lista* novo = (Lista*) malloc(sizeof(Lista));
+    novo->info = valor;
+    if (l == NULL) {
+        novo->prox = novo; // aponta para si mesmo
+        return novo;
+    }
+    Lista* p = l;
+    while (p->prox != l) {
+        p = p->prox;
+    }
+    p->prox = novo;
+    novo->prox = l;
+    return l;
+}
+
+//impressão
+void imprimir(Lista* l) {
+    if (l == NULL) {
+        printf("Lista vazia!\n");
+        return;
+    }
+    Lista* p = l;
+    do {
+        printf("%d -> ", p->info)
+        p = p->prox;
+    } while (p != l);
+    printf("(inicio)\n");
+}
