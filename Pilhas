@@ -1,0 +1,41 @@
+// estrutura da pilha
+  struct pilha{
+      No *topo;
+  };
+  typedef struct pilha Pilha;
+
+//criação da pilha
+Pilha* cria(){
+    Pilha *nova;
+    nova = (Pilha*)malloc(sizeof(Pilha));
+    nova->topo = NULL;
+    return nova;
+}
+
+//operação push
+  void push(Pilha *p, int v){
+      No *novo;
+      novo = (No*)malloc(sizeof(No));
+  if(novo!=NULL){
+      novo->prox = p->topo;
+      novo->info = v;
+      p->topo = novo;
+  }
+  else
+      printf("ERRO");
+  }
+
+//operação pop
+  int pop(Pilha *p){
+      No *aux=p->topo;
+      int v;
+  if(!vazia(p)){
+      p->topo = aux->prox;
+      v = aux->info;
+      free(aux);
+      return v;
+  }
+  else{
+      printf("Pilha vazia");
+     }
+  }
