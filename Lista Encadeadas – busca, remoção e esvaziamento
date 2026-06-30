@@ -1,0 +1,38 @@
+//Lista Encadeadas – busca, remoção e esvaziamento
+//busca
+Lista* busca(Lista* l, int v) {
+     Lista* p;
+     for (p = l; p != NULL; p = p->prox) {
+         if (p->info == v)
+           return p;
+         }
+     return NULL;
+    }
+
+//remoção
+Lista* remove_ultimo(Lista* l) {
+  if (l == NULL) {
+      return NULL;
+  }
+  if (l->prox == NULL) {
+      free(l);
+      return NULL;
+  }
+  Lista* p = l;
+  while (p->prox->prox != NULL) {
+    p = p->prox;
+  }
+    free(p->prox);
+    p->prox = NULL;
+    return l;
+  }
+
+//esvaziamento
+void libera(Lista* l) {
+    Lista* p = l;
+    while (p != NULL) {
+    Lista* t = p->prox;
+      free(p);
+      p = t;
+      }
+    }
