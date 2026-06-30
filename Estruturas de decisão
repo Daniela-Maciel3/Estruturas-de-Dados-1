@@ -1,0 +1,42 @@
+// Exemplo com if: 
+  #include <stdio.h>
+    int main() {
+    int num;
+    printf("Digite um numero: ");
+    scanf("%d", &num);
+    if (num > 0) {
+    printf("O numero eh positivo.\n");
+    }
+    return 0;
+    }  
+
+//Exemplo com if-else:
+  #include <stdio.h>
+    int main() {
+    int num;
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &num);
+    if (num % 2 == 0) {
+    printf("Numero par.\n");
+    } else {
+    printf("Numero impar.\n");
+    }
+    return 0;
+    }
+
+//Exemplo completo de if, else if e else
+ #include <stdio.h>
+    int main() {
+    float nota;
+    printf("Digite a nota: ");
+    scanf("%f", &nota);
+    if (nota >= 7.0) {
+    printf("Aprovado\n");
+    } else if (nota >= 5.0) {
+    printf("Recuperacao\n");
+    } else {
+    printf("Reprovado\n");
+    }
+    return 0;
+    }
+//
