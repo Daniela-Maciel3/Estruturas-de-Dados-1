@@ -1,0 +1,54 @@
+//Aplicação Pilhas
+#define N 50 
+	struct pilha {
+		int topo;
+		float vet[N];
+	 }; typedef struct pilha Pilha;
+	Pilha* pilha_cria (void) { 
+		Pilha* p = (Pilha*)malloc(sizeof(Pilha));
+		p->topo = 0; //inicializa com zero elementos return p;
+	 }
+	void pilha_insere (Pilha* p, float v) 
+	{ //verifica se topo alcançado
+		if (p->topo == N)
+	{
+	printf (“topo da pilha alcancado!\n”);
+	exit (1); 
+	}
+	p->vet[p->topo] = v; p->topo++;
+	}
+	float pilha_remove (Pilha* p)
+	{
+	float v;
+	if (pilha_vazia (p))
+	{
+	printf (“Pilha está vazia!\n”); 
+	exit(1);
+	}
+	//remove o elemento do topo da pilha
+	v = p->vet[p->(topo-1)];
+	p->topo--;
+	return v; 
+	}
+	int pilha_vazia (Pilha* p) 
+	{
+	return (p->topo == 0); 
+	}
+	void pilha_libera (Pilha* p)
+	{
+	free(p); 
+	}
+
+//Aplicação Pilha dinamica
+struct celula{
+	 int dado; 
+	struct celula ant;
+	};
+	typedef struct celula Celula;
+	struct pilha {
+	int tamanho;
+	Celula *topo;
+	Celula *ant;
+	};
+	typedef struct pilha Pilha;
+
