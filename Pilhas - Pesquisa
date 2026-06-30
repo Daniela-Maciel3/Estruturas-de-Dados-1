@@ -1,0 +1,23 @@
+//Operação Push
+typedef struct {
+    int* array;
+    int capacity;
+    int top;
+} Pilha;
+void push(Pilha* pilha, int x) {
+    if (pilha->top == pilha->capacity - 1) {
+         printf("Pilha Overflow\n");
+         return;
+      }
+   pilha->arr[++pilha->top] = x;
+}
+
+//Operação Pop
+  int pop()
+    {
+       if (top == -1){
+          cout << “ Underflow\n";
+         return -1;
+     }
+     return array[top--];
+  } 
